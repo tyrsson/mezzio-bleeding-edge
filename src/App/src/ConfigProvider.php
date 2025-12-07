@@ -50,11 +50,17 @@ class ConfigProvider
     public function getTemplates(): array
     {
         return [
+            'map' => [
+                'layout' => __DIR__ . '/../templates/layout/layout.phtml',
+                'app::home-page' => __DIR__ . '/../templates/app/home-page.phtml',
+                'error::404'     => __DIR__ . '/../templates/error/404.phtml',
+                'error::error'   => __DIR__ . '/../templates/error/error.phtml',
+            ],
             'paths' => [
                 'app'    => [__DIR__ . '/../templates/app'],
                 'error'  => [__DIR__ . '/../templates/error'],
-                'layout' => [__DIR__ . '/../templates/layout'],
             ],
+            'default_layout' => 'layout',
         ];
     }
 
@@ -71,7 +77,7 @@ class ConfigProvider
                 'allowed_methods' => ['GET'],
             ],
             [
-                'name'       => 'ping',
+                'name'       => 'api.ping',
                 'path'       => '/ping',
                 'middleware' => Handler\PingHandler::class,
                 'allowed_methods' => ['GET'],
