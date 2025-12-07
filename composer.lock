@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "45473ae38c16d92da381051a58c02df5",
+    "content-hash": "59b2c49b269648d96daf3c42a047da44",
     "packages": [
         {
             "name": "brick/varexporter",
@@ -1081,6 +1081,78 @@
                 }
             ],
             "time": "2025-10-11T08:40:34+00:00"
+        },
+        {
+            "name": "mezzio/mezzio-laminasviewrenderer",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mezzio/mezzio-laminasviewrenderer.git",
+                "reference": "ac78584ea1c417f4f4289616add5ca8d96c78f62"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mezzio/mezzio-laminasviewrenderer/zipball/ac78584ea1c417f4f4289616add5ca8d96c78f62",
+                "reference": "ac78584ea1c417f4f4289616add5ca8d96c78f62",
+                "shasum": ""
+            },
+            "require": {
+                "laminas/laminas-servicemanager": "^4.4.0",
+                "laminas/laminas-view": "^3.0.1",
+                "mezzio/mezzio-helpers": "^5.15.0",
+                "mezzio/mezzio-router": "^3.16.1 || ^4.0.0",
+                "mezzio/mezzio-template": "^3.0",
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
+                "psr/container": "^1.0 || ^2.0",
+                "psr/http-message": "^1.0.1 || ^2.0.0"
+            },
+            "require-dev": {
+                "laminas/laminas-coding-standard": "^3.1.0",
+                "mezzio/mezzio-fastroute": "^3.14",
+                "phpunit/phpunit": "^11.5.44",
+                "psalm/plugin-phpunit": "^0.19.5",
+                "vimeo/psalm": "^6.13.1"
+            },
+            "type": "library",
+            "extra": {
+                "laminas": {
+                    "config-provider": "Mezzio\\LaminasView\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mezzio\\LaminasView\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "laminas-view PhpRenderer integration for Mezzio",
+            "homepage": "https://mezzio.dev",
+            "keywords": [
+                "http",
+                "laminas",
+                "mezzio",
+                "middleware",
+                "psr",
+                "psr-7"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.mezzio.dev/mezzio/features/template/laminas-view/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/mezzio/mezzio-laminasviewrenderer/issues",
+                "rss": "https://github.com/mezzio/mezzio-laminasviewrenderer/releases.atom",
+                "source": "https://github.com/mezzio/mezzio-laminasviewrenderer"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2025-11-26T16:34:39+00:00"
         },
         {
             "name": "mezzio/mezzio-router",

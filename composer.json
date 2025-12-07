@@ -4,15 +4,16 @@
     "license": "BSD-3-Clause",
     "require": {
         "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
-        "laminas/laminas-config-aggregator": "^1.19",
         "laminas/laminas-component-installer": "^3.7",
+        "laminas/laminas-config-aggregator": "^1.19",
         "laminas/laminas-diactoros": "^3.8",
+        "laminas/laminas-servicemanager": "^4.5",
+        "laminas/laminas-stdlib": "^3.21",
+        "laminas/laminas-view": "^3.0",
         "mezzio/mezzio": "^3.26",
         "mezzio/mezzio-fastroute": "^3.14",
-        "laminas/laminas-stdlib": "^3.21",
         "mezzio/mezzio-helpers": "^5.20",
-        "laminas/laminas-servicemanager": "^4.5",
-        "laminas/laminas-view": "^3.0"
+        "mezzio/mezzio-laminasviewrenderer": "^3.0"
     },
     "require-dev": {
         "filp/whoops": "^2.15.4",
