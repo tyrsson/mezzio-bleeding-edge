@@ -51,7 +51,7 @@ class ConfigProvider
     {
         return [
             'map' => [
-                'layout' => __DIR__ . '/../templates/layout/layout.phtml',
+                'layout::default' => __DIR__ . '/../templates/layout/default.phtml',
                 'app::home-page' => __DIR__ . '/../templates/app/home-page.phtml',
                 'error::404'     => __DIR__ . '/../templates/error/404.phtml',
                 'error::error'   => __DIR__ . '/../templates/error/error.phtml',
@@ -60,7 +60,7 @@ class ConfigProvider
                 'app'    => [__DIR__ . '/../templates/app'],
                 'error'  => [__DIR__ . '/../templates/error'],
             ],
-            'default_layout' => 'layout',
+            'default_layout' => 'layout::default',
         ];
     }
 
