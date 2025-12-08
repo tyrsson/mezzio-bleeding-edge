@@ -48,4 +48,4 @@ composer install
         "phpunit/phpunit": "^11.5.42",
         "roave/security-advisories": "dev-master"
     },
-    ```
+```
