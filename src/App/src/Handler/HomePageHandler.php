@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Handler;
 
-use Laminas\Diactoros\Response\HtmlResponse;
+use Laminas\Diactoros\Response;
 use Mezzio\Template\TemplateRendererInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -22,7 +22,9 @@ final class HomePageHandler implements RequestHandlerInterface
         $data = [
             'message' => 'Welcome to Mezzio!',
         ];
-
-        return new HtmlResponse($this->template->render('app::home-page', $data));
+        if (null === $this->template) {
+            return new Response\JsonResponse($data);
+        }
+        return new Response\HtmlResponse($this->template->render('app::home-page', $data));
     }
 }
