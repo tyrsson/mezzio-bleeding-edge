@@ -7,6 +7,24 @@ namespace App;
 use Mezzio\Application;
 use Mezzio\Container\ApplicationConfigInjectionDelegator;
 
+/**
+ * @phpstan-type dependencyArray array{
+ *                      delegators?: array<class-string, list<class-string>>,
+ *                      factories?: array<class-string, class-string>,
+ *                      invokables?: array<class-string, class-string>
+ *               }
+ * @phpstan-type templateArray array{
+ *                      map: array<string, string>,
+ *                      paths: array<string, list<string>>,
+ *                      default_layout: string
+ *                }
+ * @phpstan-type routeArray array<array{
+ *                      name: string,
+ *                      path: string,
+ *                      middleware: class-string,
+ *                      allowed_methods: list<string>
+ *                }>
+ */
 class ConfigProvider
 {
     /**
@@ -14,6 +32,8 @@ class ConfigProvider
      *
      * To add a bit of a structure, each section is defined in a separate
      * method which returns an array with its configuration.
+     *
+     * @phpstan-return array{dependencies: dependencyArray, routes: routeArray, templates: templateArray}
      */
     public function __invoke(): array
     {
@@ -26,6 +46,8 @@ class ConfigProvider
 
     /**
      * Returns the container dependencies
+     *
+     * @phpstan-return dependencyArray
      */
     public function getDependencies(): array
     {
@@ -46,6 +68,8 @@ class ConfigProvider
 
     /**
      * Returns the templates configuration
+     *
+     * @phpstan-return templateArray
      */
     public function getTemplates(): array
     {
@@ -66,6 +90,8 @@ class ConfigProvider
 
     /**
      * Returns the application routes
+     *
+     * @phpstan-return routeArray
      */
     public function getRoutes(): array
     {
