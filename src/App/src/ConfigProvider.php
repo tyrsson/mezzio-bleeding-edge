@@ -50,15 +50,15 @@ class ConfigProvider
     public function getTemplates(): array
     {
         return [
-            'map' => [
+            'map'            => [
                 'layout::default' => __DIR__ . '/../templates/layout/default.phtml',
-                'app::home-page' => __DIR__ . '/../templates/app/home-page.phtml',
-                'error::404'     => __DIR__ . '/../templates/error/404.phtml',
-                'error::error'   => __DIR__ . '/../templates/error/error.phtml',
+                'app::home-page'  => __DIR__ . '/../templates/app/home-page.phtml',
+                'error::404'      => __DIR__ . '/../templates/error/404.phtml',
+                'error::error'    => __DIR__ . '/../templates/error/error.phtml',
             ],
-            'paths' => [
-                'app'    => [__DIR__ . '/../templates/app'],
-                'error'  => [__DIR__ . '/../templates/error'],
+            'paths'          => [
+                'app'   => [__DIR__ . '/../templates/app'],
+                'error' => [__DIR__ . '/../templates/error'],
             ],
             'default_layout' => 'layout::default',
         ];
@@ -71,15 +71,15 @@ class ConfigProvider
     {
         return [
             [
-                'name'       => 'home',
-                'path'       => '/',
-                'middleware' => Handler\HomePageHandler::class,
+                'name'            => 'home',
+                'path'            => '/',
+                'middleware'      => Handler\HomePageHandler::class,
                 'allowed_methods' => ['GET'],
             ],
             [
-                'name'       => 'api.ping',
-                'path'       => '/ping',
-                'middleware' => Handler\PingHandler::class,
+                'name'            => 'api.ping',
+                'path'            => '/ping',
+                'middleware'      => Handler\PingHandler::class,
                 'allowed_methods' => ['GET'],
             ],
         ];

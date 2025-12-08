@@ -23,10 +23,6 @@ final class InMemoryContainer implements ContainerInterface
         $this->services[$name] = $service;
     }
 
-    /**
-     * @param string $id
-     * @return mixed
-     */
     public function get(string $id): mixed
     {
         if (! $this->has($id)) {
@@ -36,10 +32,6 @@ final class InMemoryContainer implements ContainerInterface
         return $this->services[$id];
     }
 
-    /**
-     * @param string $id
-     * @return bool
-     */
     public function has(string $id): bool
     {
         return array_key_exists($id, $this->services);
