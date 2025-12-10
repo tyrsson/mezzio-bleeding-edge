@@ -16,13 +16,12 @@
         "mezzio/mezzio-laminasviewrenderer": "^3.0"
     },
     "require-dev": {
-        "filp/whoops": "^2.15.4",
         "laminas/laminas-coding-standard": "^3.1",
         "phpstan/phpstan": "^2.1",
         "phpstan/phpstan-phpunit": "^2.0",
         "phpunit/phpunit": "^11.5.42",
         "roave/security-advisories": "dev-master",
-        "tracy/tracy": "2.11.0"
+        "webware/dev-tools": "0.1.x-dev"
     },
     "autoload": {
         "psr-4": {
@@ -34,6 +33,8 @@
             "AppTest\\": "test/AppTest/"
         }
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "config": {
         "sort-packages": true,
         "platform": {
