@@ -20,7 +20,7 @@ require 'vendor/autoload.php';
     $hasTracy = class_exists(Debugger::class);
 
     if ($hasTracy) {
-        Debugger::enable(Debugger::Development);
+        //Debugger::enable(Debugger::Development);
         Debugger::timer('build-container');
     }
     /** @var \Psr\Container\ContainerInterface $container */
