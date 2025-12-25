@@ -2,9 +2,7 @@
 
 This is a custom Mezzio skeleton which is built from the latest releases of all dependencies (to the extent possible).
 
-- Couple of things to note about this build. It uses Mezzio\Container\ApplicationConfigInjectionDelegator to allow
-  configuring the application routes in either a config file or a ConfigProvider. I prefer routes to live in their
-  respective modules.
+- Skeleton uses a RouteProvider for routes instead of a config/routes.php file.
 - It uses laminas/laminas-stratigility:"^4.3.0"
 - Currently mezzio/mezzio-tooling can not be installed due to a conflict with stratigility.
   Which means that laminas/laminas-development-mode can not be installed. However, you can use the
