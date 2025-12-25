@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace AppTest\Handler;
 
+use App\Container\HomePageHandlerFactory;
 use App\Handler\HomePageHandler;
-use App\Handler\HomePageHandlerFactory;
 use AppTest\InMemoryContainer;
 use Mezzio\Template\TemplateRendererInterface;
 use PHPUnit\Framework\Attributes\CoversClass;

@@ -4,26 +4,20 @@ declare(strict_types=1);
 
 namespace App;
 
-use Mezzio\Application;
-use Mezzio\Container\ApplicationConfigInjectionDelegator;
-
 /**
  * @phpstan-type dependencyArray array{
  *                      delegators?: array<class-string, list<class-string>>,
  *                      factories?: array<class-string, class-string>,
  *                      invokables?: array<class-string, class-string>
  *               }
+ * @phpstan-type routeProviderArray array{
+ *                      route-providers: list<class-string>
+ *                }
  * @phpstan-type templateArray array{
  *                      map: array<string, string>,
  *                      paths: array<string, list<string>>,
  *                      default_layout: string
  *                }
- * @phpstan-type routeArray array<array{
- *                      name: string,
- *                      path: string,
- *                      middleware: class-string,
- *                      allowed_methods: list<string>
- *                }>
  */
 class ConfigProvider
 {
@@ -33,13 +27,13 @@ class ConfigProvider
      * To add a bit of a structure, each section is defined in a separate
      * method which returns an array with its configuration.
      *
-     * @phpstan-return array{dependencies: dependencyArray, routes: routeArray, templates: templateArray}
+     * @phpstan-return array{dependencies: dependencyArray, templates: templateArray}
      */
     public function __invoke(): array
     {
         return [
             'dependencies' => $this->getDependencies(),
-            'routes'       => $this->getRoutes(),
+            'router'       => $this->getRouteProviders(),
             'templates'    => $this->getTemplates(),
         ];
     }
@@ -52,16 +46,26 @@ class ConfigProvider
     public function getDependencies(): array
     {
         return [
-            'delegators' => [
-                Application::class => [
-                    ApplicationConfigInjectionDelegator::class,
-                ],
-            ],
             'factories'  => [
-                Handler\HomePageHandler::class => Handler\HomePageHandlerFactory::class,
+                Handler\HomePageHandler::class => Container\HomePageHandlerFactory::class,
+                RouteProvider::class           => Container\RouteProviderFactory::class,
             ],
             'invokables' => [
                 Handler\PingHandler::class => Handler\PingHandler::class,
+            ],
+        ];
+    }
+
+    /**
+     * Returns the route provider configuration
+     *
+     * @phpstan-return routeProviderArray
+     */
+    public function getRouteProviders(): array
+    {
+        return [
+            'route-providers' => [
+                RouteProvider::class,
             ],
         ];
     }
@@ -85,29 +89,6 @@ class ConfigProvider
                 'error' => [__DIR__ . '/../templates/error'],
             ],
             'default_layout' => 'layout::default',
-        ];
-    }
-
-    /**
-     * Returns the application routes
-     *
-     * @phpstan-return routeArray
-     */
-    public function getRoutes(): array
-    {
-        return [
-            [
-                'name'            => 'home',
-                'path'            => '/',
-                'middleware'      => Handler\HomePageHandler::class,
-                'allowed_methods' => ['GET'],
-            ],
-            [
-                'name'            => 'api.ping',
-                'path'            => '/ping',
-                'middleware'      => Handler\PingHandler::class,
-                'allowed_methods' => ['GET'],
-            ],
         ];
     }
 }

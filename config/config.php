@@ -19,12 +19,17 @@ $aggregator = new ConfigAggregator([
     \Laminas\ServiceManager\ConfigProvider::class,
     \Mezzio\Router\FastRouteRouter\ConfigProvider::class,
     \Laminas\HttpHandlerRunner\ConfigProvider::class,
+    // Include cache configuration
+    new ArrayProvider($cacheConfig),
     \Mezzio\Helper\ConfigProvider::class,
     \Mezzio\ConfigProvider::class,
     \Mezzio\Router\ConfigProvider::class,
     \Laminas\Diactoros\ConfigProvider::class,
-    // Include cache configuration
-    new ArrayProvider($cacheConfig),
+    class_exists(\Webware\DevTools\ConfigProvider::class)
+        ? \Webware\DevTools\ConfigProvider::class
+        : function () {
+            return [];
+        },
     // Default App module config
     App\ConfigProvider::class,
     // Load application config in a pre-defined order in such a way that local settings
