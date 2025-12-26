@@ -9,7 +9,7 @@ This is a custom Mezzio skeleton which is built from the latest releases of all 
   mode manually in a config file with the following values.
 
   ```php
-      'debug'                        => true,
+    'debug'                        => true,
     ConfigAggregator::ENABLE_CACHE => false,
     ```
 
