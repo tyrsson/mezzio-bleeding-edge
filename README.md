@@ -5,8 +5,14 @@ This is a custom Mezzio skeleton which is built from the latest releases of all 
 - Skeleton uses a RouteProvider for routes instead of a config/routes.php file.
 - It uses laminas/laminas-stratigility:"^4.3.0"
 - Currently mezzio/mezzio-tooling can not be installed due to a conflict with stratigility.
-  Which means that laminas/laminas-development-mode can not be installed. However, you can use the
-  composer clear-config-cache command - see composer.json for usage.
+  Which means that laminas/laminas-development-mode can not be installed. However, you can enable development
+  mode manually in a config file with the following values.
+
+  ```php
+    'debug'                        => true,
+    ConfigAggregator::ENABLE_CACHE => false,
+    ```
+
 - It sets en-US as the html elements lang attribute value.
 - It uses PHPStan for static analysis rather than Psalm which is what laminas/mezzio uses.
   In its current state it passes at level 10 without a baseline.
