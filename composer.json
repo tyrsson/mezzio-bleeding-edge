@@ -16,12 +16,12 @@
         "mezzio/mezzio-laminasviewrenderer": "^3.0"
     },
     "require-dev": {
-        "laminas/laminas-coding-standard": "^3.1",
         "phpstan/phpstan": "^2.1",
         "phpstan/phpstan-phpunit": "^2.0",
         "phpunit/phpunit": "^11.5.42",
         "roave/security-advisories": "dev-master",
-        "webware/dev-tools": "0.1.x-dev"
+        "webware/coding-standard": "^0.1.0",
+        "webware/traccio": "^0.1.0"
     },
     "autoload": {
         "psr-4": {
@@ -41,7 +41,6 @@
             "php": "8.2.99"
         },
         "allow-plugins": {
-            "dealerdirect/phpcodesniffer-composer-installer": true,
             "laminas/laminas-component-installer": true
         }
     },
@@ -52,13 +51,13 @@
             "@test"
         ],
         "clear-config-cache": "php bin/clear-config-cache.php",
-        "enable-codestandard": "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run",
-        "cs-check": "phpcs",
-        "cs-fix": "phpcbf",
+        "cs-check": "vendor/bin/php-cs-fixer check",
+        "cs-fix": "vendor/bin/php-cs-fixer fix",
         "test": "phpunit --colors=always",
         "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
         "sa": "vendor/bin/phpstan analyse --memory-limit=256M",
-        "sa-baseline": "vendor/bin/phpstan analyse --memory-limit=256M --generate-baseline",
+        "sa-gen-baseline": "vendor/bin/phpstan analyse --memory-limit=256M --generate-baseline",
+        "sa-verbose": "vendor/bin/phpstan analyse --memory-limit=256M -vv",
         "serve": [
             "Composer\\Config::disableProcessTimeout",
             "php -S 0.0.0.0:8080 -t public/"

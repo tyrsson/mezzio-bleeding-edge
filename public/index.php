@@ -2,6 +2,19 @@
 
 declare(strict_types=1);
 
+/*
+ * This file is part of the Mezzio Bleeding Edge Skeleton App.
+ *
+ * Copyright (c) 2025-2026 Joey Smith <jsmith@webinertia.net>
+ * and contributors.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+use Mezzio\Application;
+use Mezzio\MiddlewareFactory;
+use Psr\Container\ContainerInterface;
 use Tracy\Debugger;
 
 // Delegate static file requests back to the PHP built-in webserver
@@ -10,28 +23,29 @@ if (PHP_SAPI === 'cli-server' && $_SERVER['SCRIPT_FILENAME'] !== __FILE__) {
 }
 
 chdir(dirname(__DIR__));
+
 require 'vendor/autoload.php';
 
 /**
  * Self-called anonymous function that creates its own scope and keeps the global namespace clean.
  */
 (function () {
-
     $hasTracy = class_exists(Debugger::class);
 
     if ($hasTracy) {
-        //Debugger::enable(Debugger::Development);
+        // Debugger::enable(Debugger::Development);
         Debugger::timer('build-container');
     }
-    /** @var \Psr\Container\ContainerInterface $container */
+
+    /** @var ContainerInterface $container */
     $container = require 'config/container.php';
     if ($hasTracy) {
         $buildContainer = Debugger::timer('build-container');
     }
 
-    /** @var \Mezzio\Application $app */
-    $app = $container->get(\Mezzio\Application::class);
-    $factory = $container->get(\Mezzio\MiddlewareFactory::class);
+    /** @var Application $app */
+    $app     = $container->get(Application::class);
+    $factory = $container->get(MiddlewareFactory::class);
 
     if ($hasTracy) {
         Debugger::timer('build-pipeline');
@@ -60,5 +74,4 @@ require 'vendor/autoload.php';
             ],
         );
     }
-
 })();

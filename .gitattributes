@@ -1,7 +1,7 @@
 /.gitattributes export-ignore
 /.github/ export-ignore
 /.gitignore export-ignore
-/phpcs.xml export-ignore
+/.php-cs-fixer.dist.php export-ignore
 /renovate.json export-ignore
 /.laminas-ci.json export-ignore
 /phpunit.xml.dist export-ignore
