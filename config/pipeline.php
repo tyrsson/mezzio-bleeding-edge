@@ -2,6 +2,16 @@
 
 declare(strict_types=1);
 
+/*
+ * This file is part of the Mezzio Bleeding Edge Skeleton App.
+ *
+ * Copyright (c) 2025-2026 Joey Smith <jsmith@webinertia.net>
+ * and contributors.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 use Laminas\Stratigility\Middleware\ErrorHandler;
 use Mezzio\Application;
 use Mezzio\Handler\NotFoundHandler;
@@ -14,16 +24,15 @@ use Mezzio\Router\Middleware\ImplicitOptionsMiddleware;
 use Mezzio\Router\Middleware\MethodNotAllowedMiddleware;
 use Mezzio\Router\Middleware\RouteMiddleware;
 use Psr\Container\ContainerInterface;
+use Webware\Traccio\Middleware\TracyDebuggerMiddleware;
 
-/**
- * Setup middleware pipeline:
- */
+// Setup middleware pipeline:
 
 return function (Application $app, MiddlewareFactory $factory, ContainerInterface $container): void {
     // The error handler should be the first (most outer) middleware to catch
     // all Exceptions.
-    class_exists(\Webware\DevTools\Middleware\TracyDebuggerMiddleware::class) && $container->get('config')['debug']
-        ? $app->pipe(\Webware\DevTools\Middleware\TracyDebuggerMiddleware::class)
+    class_exists(TracyDebuggerMiddleware::class) && $container->get('config')['debug']
+        ? $app->pipe(TracyDebuggerMiddleware::class)
         : $app->pipe(ErrorHandler::class);
 
     $app->pipe(ServerUrlMiddleware::class);

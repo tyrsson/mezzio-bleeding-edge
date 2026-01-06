@@ -2,6 +2,16 @@
 
 declare(strict_types=1);
 
+/*
+ * This file is part of the Mezzio Bleeding Edge Skeleton App.
+ *
+ * Copyright (c) 2025-2026 Joey Smith <jsmith@webinertia.net>
+ * and contributors.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace App\Handler;
 
 use Laminas\Diactoros\Response;
@@ -13,9 +23,8 @@ use Psr\Http\Server\RequestHandlerInterface;
 final class HomePageHandler implements RequestHandlerInterface
 {
     public function __construct(
-        private readonly ?TemplateRendererInterface $template = null
-    ) {
-    }
+        private readonly ?TemplateRendererInterface $template = null,
+    ) {}
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
@@ -25,6 +34,7 @@ final class HomePageHandler implements RequestHandlerInterface
         if (null === $this->template) {
             return new Response\JsonResponse($data);
         }
+
         return new Response\HtmlResponse($this->template->render('app::home-page', $data));
     }
 }
