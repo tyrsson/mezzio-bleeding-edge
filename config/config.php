@@ -24,6 +24,8 @@ $cacheConfig = [
 ];
 
 $aggregator = new ConfigAggregator([
+    \PhpDb\ConfigProvider::class,
+    \PhpDb\Adapter\Sqlite\ConfigProvider::class,
     Laminas\View\ConfigProvider::class,
     Mezzio\LaminasView\ConfigProvider::class,
     Laminas\ServiceManager\ConfigProvider::class,

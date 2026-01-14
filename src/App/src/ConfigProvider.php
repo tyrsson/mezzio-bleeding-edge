@@ -31,6 +31,7 @@ namespace App;
  */
 class ConfigProvider
 {
+    public const DB_PATH = __DIR__ . '/../../../data/storage/phpdb_sqlite.db';
     /**
      * Returns the configuration array
      *

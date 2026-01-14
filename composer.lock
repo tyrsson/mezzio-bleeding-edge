@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f1a1b66dccde47cb21aefd6ac6d5aa87",
+    "content-hash": "6e9a9d4110a77413dea4dfa75fabaf1c",
     "packages": [
         {
             "name": "brick/varexporter",
@@ -822,16 +822,16 @@
         },
         {
             "name": "mezzio/mezzio",
-            "version": "3.26.0",
+            "version": "3.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mezzio/mezzio.git",
-                "reference": "1b3b1014677884db284f2a5c45888f0427a910e8"
+                "reference": "77e5f97c68c1748c85288b8ac5630f2efeb1536b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mezzio/mezzio/zipball/1b3b1014677884db284f2a5c45888f0427a910e8",
-                "reference": "1b3b1014677884db284f2a5c45888f0427a910e8",
+                "url": "https://api.github.com/repos/mezzio/mezzio/zipball/77e5f97c68c1748c85288b8ac5630f2efeb1536b",
+                "reference": "77e5f97c68c1748c85288b8ac5630f2efeb1536b",
                 "shasum": ""
             },
             "require": {
@@ -845,7 +845,7 @@
                 "psr/http-factory": "^1.0",
                 "psr/http-message": "^1.0.1 || ^2.0.0",
                 "psr/http-server-middleware": "^1.0",
-                "webmozart/assert": "^1.11.0"
+                "webmozart/assert": "^1.11.0 || ^2.0.0"
             },
             "conflict": {
                 "container-interop/container-interop": "<1.2.0",
@@ -924,7 +924,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2025-11-26T12:40:07+00:00"
+            "time": "2026-01-09T13:03:09+00:00"
         },
         {
             "name": "mezzio/mezzio-fastroute",
@@ -1157,16 +1157,16 @@
         },
         {
             "name": "mezzio/mezzio-router",
-            "version": "4.1.0",
+            "version": "4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mezzio/mezzio-router.git",
-                "reference": "82846ece61e2c7f903baf734de9fcb47f89f999c"
+                "reference": "e7a6505d7e460ce30c4135e146241d7d24d81c27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mezzio/mezzio-router/zipball/82846ece61e2c7f903baf734de9fcb47f89f999c",
-                "reference": "82846ece61e2c7f903baf734de9fcb47f89f999c",
+                "url": "https://api.github.com/repos/mezzio/mezzio-router/zipball/e7a6505d7e460ce30c4135e146241d7d24d81c27",
+                "reference": "e7a6505d7e460ce30c4135e146241d7d24d81c27",
                 "shasum": ""
             },
             "require": {
@@ -1176,7 +1176,7 @@
                 "psr/http-factory": "^1.0.2",
                 "psr/http-message": "^1.0.1 || ^2.0.0",
                 "psr/http-server-middleware": "^1.0.2",
-                "webmozart/assert": "^1.11"
+                "webmozart/assert": "^1.11.0 || ^2.1.1"
             },
             "conflict": {
                 "mezzio/mezzio": "<3.5",
@@ -1234,7 +1234,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2025-10-11T09:16:49+00:00"
+            "time": "2026-01-09T11:44:24+00:00"
         },
         {
             "name": "mezzio/mezzio-template",
@@ -1407,6 +1407,206 @@
                 "source": "https://github.com/nikic/PHP-Parser/tree/v5.7.0"
             },
             "time": "2025-12-06T11:56:16+00:00"
+        },
+        {
+            "name": "php-db/phpdb",
+            "version": "0.6.x-dev",
+            "dist": {
+                "type": "path",
+                "url": "../../Github/Personal_Account/phpdb",
+                "reference": "e28a824dcb6e3c8acdff9a5734dcc487e6d93243"
+            },
+            "require": {
+                "laminas/laminas-servicemanager": "^3.0.0 || ^4.0.0",
+                "laminas/laminas-stdlib": "^3.20.0",
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0"
+            },
+            "conflict": {
+                "laminas/laminas-db": "*",
+                "zendframework/zend-db": "*"
+            },
+            "require-dev": {
+                "laminas/laminas-coding-standard": "^3.0.1",
+                "laminas/laminas-eventmanager": "^3.14.0",
+                "laminas/laminas-hydrator": "^4.6.0",
+                "phpbench/phpbench": "^1.4",
+                "phpstan/phpstan": "^2.1",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "phpunit/phpunit": "^11.5.42",
+                "rector/rector": "^2.0"
+            },
+            "suggest": {
+                "laminas/laminas-eventmanager": "Laminas\\EventManager component",
+                "laminas/laminas-hydrator": "(^5.0.0) Laminas\\Hydrator component for using HydratingResultSets"
+            },
+            "type": "library",
+            "extra": {
+                "laminas": {
+                    "config-provider": "PhpDb\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PhpDb\\": "src/",
+                    "CustomRule\\PHPUnit\\": "rector/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "PhpDbTest\\": "test/unit/",
+                    "PhpDbIntegrationTest\\": "test/integration/",
+                    "PhpDbBenchmark\\": "test/benchmark/"
+                }
+            },
+            "scripts": {
+                "check": [
+                    "@cs-check",
+                    "@sa",
+                    "@test",
+                    "@test-integration"
+                ],
+                "cs-check": [
+                    "phpcs"
+                ],
+                "cs-fix": [
+                    "phpcbf"
+                ],
+                "test": [
+                    "phpunit --colors=always --testsuite \"unit test\""
+                ],
+                "test-coverage": [
+                    "phpunit --colors=always --coverage-clover clover.xml"
+                ],
+                "test-integration": [
+                    "phpunit --colors=always --testsuite \"integration test\""
+                ],
+                "sa": [
+                    "vendor/bin/phpstan analyse --memory-limit=256M"
+                ],
+                "sa-gen-baseline": [
+                    "vendor/bin/phpstan analyse --memory-limit=256M --generate-baseline"
+                ],
+                "sa-verbose": [
+                    "vendor/bin/phpstan analyse --memory-limit=256M -vv"
+                ],
+                "upload-coverage": [
+                    "coveralls -v"
+                ]
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Database abstraction layer, SQL abstraction, result set abstraction, and RowDataGateway and TableDataGateway implementations",
+            "homepage": "https://php-db.dev",
+            "keywords": [
+                "db",
+                "laminas",
+                "mezzio",
+                "php-db"
+            ],
+            "support": {
+                "docs": "https://docs.php-db.dev/",
+                "issues": "https://github.com/php-db/phpdb/issues",
+                "source": "https://github.com/php-db/phpdb"
+            },
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "php-db/phpdb-adapter-sqlite",
+            "version": "0.2.x-dev",
+            "dist": {
+                "type": "path",
+                "url": "../../Github/Personal_Account/phpdb-adapter-sqlite",
+                "reference": "37d71e1d4e22f84983a3294e7fda746ea4b3c270"
+            },
+            "require": {
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
+                "php-db/phpdb": "^0.6.0",
+                "webmozart/assert": "^1.11"
+            },
+            "require-dev": {
+                "ext-pdo": "*",
+                "ext-pdo_sqlite": "*",
+                "laminas/laminas-coding-standard": "^3.0.1",
+                "phpstan/phpstan": "^2.1",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "phpunit/phpunit": "^11.5.42"
+            },
+            "suggest": {
+                "laminas/laminas-servicemanager": "Laminas\\ServiceManager component"
+            },
+            "type": "library",
+            "extra": {
+                "laminas": {
+                    "config-provider": "PhpDb\\Adapter\\Sqlite\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PhpDb\\Adapter\\Sqlite\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "PhpDbTest\\Adapter\\Sqlite\\": "test/unit/",
+                    "PhpDbIntegrationTest\\Adapter\\Sqlite\\": "test/integration/"
+                }
+            },
+            "scripts": {
+                "check": [
+                    "@cs-check",
+                    "@sa",
+                    "@test",
+                    "@test-integration"
+                ],
+                "cs-check": [
+                    "phpcs"
+                ],
+                "cs-fix": [
+                    "phpcbf"
+                ],
+                "test": [
+                    "phpunit --colors=always --testsuite \"unit test\""
+                ],
+                "test-coverage": [
+                    "phpunit --colors=always --coverage-clover clover.xml"
+                ],
+                "test-integration": [
+                    "phpunit --colors=always --testsuite \"integration test\""
+                ],
+                "sa": [
+                    "vendor/bin/phpstan analyse --memory-limit=256M"
+                ],
+                "sa-gen-baseline": [
+                    "vendor/bin/phpstan analyse --memory-limit=256M --generate-baseline"
+                ],
+                "sa-verbose": [
+                    "vendor/bin/phpstan analyse --memory-limit=256M -vv"
+                ],
+                "upload-coverage": [
+                    "coveralls -v"
+                ]
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "SQLite support for php-db",
+            "homepage": "https://github.com/php-db/phpdb-adapter-sqlite/discussions",
+            "keywords": [
+                "db",
+                "php-db",
+                "sqlite"
+            ],
+            "support": {
+                "issues": "https://github.com/php-db/phpdb-adapter-sqlite/issues",
+                "source": "https://github.com/php-db/phpdb-adapter-sqlite",
+                "forum": "https://github.com/php-db/phpdb-adapter-sqlite/discussions"
+            },
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "psr/container",
@@ -2197,16 +2397,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.92.4",
+            "version": "v3.92.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer.git",
-                "reference": "9e7488b19403423e02e8403cc1eb596baf4673b0"
+                "reference": "260cc8c4a1d2f6d2f22cd4f9c70aa72e55ebac58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/9e7488b19403423e02e8403cc1eb596baf4673b0",
-                "reference": "9e7488b19403423e02e8403cc1eb596baf4673b0",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/260cc8c4a1d2f6d2f22cd4f9c70aa72e55ebac58",
+                "reference": "260cc8c4a1d2f6d2f22cd4f9c70aa72e55ebac58",
                 "shasum": ""
             },
             "require": {
@@ -2289,7 +2489,7 @@
             ],
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/issues",
-                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.92.4"
+                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.92.5"
             },
             "funding": [
                 {
@@ -2297,7 +2497,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-01-04T00:38:52+00:00"
+            "time": "2026-01-08T21:57:37+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -3659,12 +3859,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "9a341b84b3ebb8ad254193ce440b44c7d4375a4f"
+                "reference": "28d428ca7643cd49a652e508758bbc7fc30c88c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/9a341b84b3ebb8ad254193ce440b44c7d4375a4f",
-                "reference": "9a341b84b3ebb8ad254193ce440b44c7d4375a4f",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/28d428ca7643cd49a652e508758bbc7fc30c88c2",
+                "reference": "28d428ca7643cd49a652e508758bbc7fc30c88c2",
                 "shasum": ""
             },
             "conflict": {
@@ -3797,6 +3997,7 @@
                 "contao/core-bundle": "<4.13.57|>=5,<5.3.42|>=5.4,<5.6.5",
                 "contao/listing-bundle": ">=3,<=3.5.30|>=4,<4.4.8",
                 "contao/managed-edition": "<=1.5",
+                "coreshop/core-shop": "<=4.1.7",
                 "corveda/phpsandbox": "<1.3.5",
                 "cosenary/instagram": "<=2.3",
                 "couleurcitron/tarteaucitron-wp": "<0.3",
@@ -3848,7 +4049,7 @@
                 "drupal/commerce_alphabank_redirect": "<1.0.3",
                 "drupal/commerce_eurobank_redirect": "<2.1.1",
                 "drupal/config_split": "<1.10|>=2,<2.0.2",
-                "drupal/core": ">=6,<6.38|>=7,<7.102|>=8,<10.4.9|>=10.5,<10.5.6|>=11,<11.1.9|>=11.2,<11.2.8",
+                "drupal/core": ">=6,<6.38|>=7,<7.103|>=8,<10.4.9|>=10.5,<10.5.6|>=11,<11.1.9|>=11.2,<11.2.8",
                 "drupal/core-recommended": ">=7,<7.102|>=8,<10.2.11|>=10.3,<10.3.9|>=11,<11.0.8",
                 "drupal/currency": "<3.5",
                 "drupal/drupal": ">=5,<5.11|>=6,<6.38|>=7,<7.102|>=8,<10.2.11|>=10.3,<10.3.9|>=11,<11.0.8",
@@ -3963,7 +4164,7 @@
                 "geshi/geshi": "<=1.0.9.1",
                 "getformwork/formwork": "<2.2",
                 "getgrav/grav": "<1.11.0.0-beta1",
-                "getkirby/cms": "<3.9.8.3-dev|>=3.10,<3.10.1.2-dev|>=4,<4.7.1|>=5,<5.1.4",
+                "getkirby/cms": "<3.9.8.3-dev|>=3.10,<3.10.1.2-dev|>=4,<4.7.1|>=5,<=5.2.1",
                 "getkirby/kirby": "<3.9.8.3-dev|>=3.10,<3.10.1.2-dev|>=4,<4.7.1",
                 "getkirby/panel": "<2.5.14",
                 "getkirby/starterkit": "<=3.7.0.2",
@@ -4192,7 +4393,7 @@
                 "october/cms": "<1.0.469|==1.0.469|==1.0.471|==1.1.1",
                 "october/october": "<3.7.5",
                 "october/rain": "<1.0.472|>=1.1,<1.1.2",
-                "october/system": "<3.7.5",
+                "october/system": "<=3.7.12|>=4,<=4.0.11",
                 "oliverklee/phpunit": "<3.5.15",
                 "omeka/omeka-s": "<4.0.3",
                 "onelogin/php-saml": "<2.21.1|>=3,<3.8.1|>=4,<4.3.1",
@@ -4483,10 +4684,10 @@
                 "twbs/bootstrap": "<3.4.1|>=4,<4.3.1",
                 "twig/twig": "<3.11.2|>=3.12,<3.14.1|>=3.16,<3.19",
                 "typo3/cms": "<9.5.29|>=10,<10.4.35|>=11,<11.5.23|>=12,<12.2",
-                "typo3/cms-backend": "<4.1.14|>=4.2,<4.2.15|>=4.3,<4.3.7|>=4.4,<4.4.4|>=7,<=7.6.50|>=8,<=8.7.39|>=9,<9.5.55|>=10,<10.4.54|>=11,<11.5.48|>=12,<12.4.37|>=13,<13.4.18",
+                "typo3/cms-backend": "<4.1.14|>=4.2,<4.2.15|>=4.3,<4.3.7|>=4.4,<4.4.4|>=7,<=7.6.50|>=8,<=8.7.39|>=9,<9.5.55|>=10,<=10.4.54|>=11,<=11.5.48|>=12,<=12.4.40|>=13,<=13.4.22|>=14,<=14.0.1",
                 "typo3/cms-belog": ">=10,<=10.4.47|>=11,<=11.5.41|>=12,<=12.4.24|>=13,<=13.4.2",
                 "typo3/cms-beuser": ">=9,<9.5.55|>=10,<10.4.54|>=11,<11.5.48|>=12,<12.4.37|>=13,<13.4.18",
-                "typo3/cms-core": "<=8.7.56|>=9,<9.5.55|>=10,<10.4.54|>=11,<11.5.48|>=12,<12.4.37|>=13,<13.4.18",
+                "typo3/cms-core": "<=8.7.56|>=9,<9.5.55|>=10,<=10.4.54|>=11,<=11.5.48|>=12,<=12.4.40|>=13,<=13.4.22|>=14,<=14.0.1",
                 "typo3/cms-dashboard": ">=10,<10.4.54|>=11,<11.5.48|>=12,<12.4.37|>=13,<13.4.18",
                 "typo3/cms-extbase": "<6.2.24|>=7,<7.6.8|==8.1.1",
                 "typo3/cms-extensionmanager": ">=10,<=10.4.47|>=11,<=11.5.41|>=12,<=12.4.24|>=13,<=13.4.2",
@@ -4498,7 +4699,8 @@
                 "typo3/cms-install": "<4.1.14|>=4.2,<4.2.16|>=4.3,<4.3.9|>=4.4,<4.4.5|>=12.2,<12.4.8|==13.4.2",
                 "typo3/cms-lowlevel": ">=11,<=11.5.41",
                 "typo3/cms-recordlist": ">=11,<11.5.48",
-                "typo3/cms-recycler": ">=9,<9.5.55|>=10,<10.4.54|>=11,<11.5.48|>=12,<12.4.37|>=13,<13.4.18",
+                "typo3/cms-recycler": ">=9,<9.5.55|>=10,<=10.4.54|>=11,<=11.5.48|>=12,<=12.4.40|>=13,<=13.4.22|>=14,<=14.0.1",
+                "typo3/cms-redirects": ">=10,<=10.4.54|>=11,<=11.5.48|>=12,<=12.4.40|>=13,<=13.4.22|>=14,<=14.0.1",
                 "typo3/cms-rte-ckeditor": ">=9.5,<9.5.42|>=10,<10.4.39|>=11,<11.5.30",
                 "typo3/cms-scheduler": ">=11,<=11.5.41",
                 "typo3/cms-setup": ">=9,<=9.5.50|>=10,<=10.4.49|>=11,<=11.5.43|>=12,<=12.4.30|>=13,<=13.4.11",
@@ -4657,7 +4859,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-01-05T20:06:42+00:00"
+            "time": "2026-01-13T22:06:20+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -7303,16 +7505,10 @@
         {
             "name": "webware/traccio",
             "version": "0.1.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tyrsson/traccio.git",
-                "reference": "68887e5f65beefb314d936728cebe4a3ce342ae9"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/tyrsson/traccio/zipball/68887e5f65beefb314d936728cebe4a3ce342ae9",
-                "reference": "68887e5f65beefb314d936728cebe4a3ce342ae9",
-                "shasum": ""
+                "type": "path",
+                "url": "../../Github/webware/traccio",
+                "reference": "68887e5f65beefb314d936728cebe4a3ce342ae9"
             },
             "require": {
                 "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
@@ -7328,14 +7524,54 @@
                 "roave/security-advisories": "dev-master",
                 "webware/coding-standard": "^0.1.0"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "Webware\\Traccio\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "WebwareIntegrationTest\\Traccio\\": "test/integration/",
+                    "WebwareTestAsset\\Traccio\\": "test/asset/",
+                    "WebwareTest\\Traccio\\": "test/unit/"
+                }
+            },
+            "scripts": {
+                "check": [
+                    "@cs-check",
+                    "@sa",
+                    "@test",
+                    "@test-integration"
+                ],
+                "cs-check": [
+                    "vendor/bin/php-cs-fixer check"
+                ],
+                "cs-fix": [
+                    "vendor/bin/php-cs-fixer fix"
+                ],
+                "test": [
+                    "phpunit --colors=always --testsuite \"unit test\""
+                ],
+                "test-coverage": [
+                    "phpunit --colors=always --coverage-clover clover.xml"
+                ],
+                "test-integration": [
+                    "phpunit --colors=always --testsuite \"integration test\""
+                ],
+                "sa": [
+                    "vendor/bin/phpstan analyse --memory-limit=256M"
+                ],
+                "sa-gen-baseline": [
+                    "vendor/bin/phpstan analyse --memory-limit=256M --generate-baseline"
+                ],
+                "sa-verbose": [
+                    "vendor/bin/phpstan analyse --memory-limit=256M -vv"
+                ],
+                "upload-coverage": [
+                    "coveralls -v"
+                ]
+            },
             "license": [
                 "BSD-3-Clause"
             ],
@@ -7352,11 +7588,9 @@
                 "webware",
                 "webware traccio"
             ],
-            "support": {
-                "issues": "https://github.com/tyrsson/traccio/issues",
-                "source": "https://github.com/tyrsson/traccio/tree/0.1.x"
-            },
-            "time": "2026-01-06T19:10:27+00:00"
+            "transport-options": {
+                "relative": true
+            }
         }
     ],
     "aliases": [],

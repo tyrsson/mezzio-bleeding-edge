@@ -14,8 +14,10 @@ declare(strict_types=1);
 
 namespace App\Container;
 
+use App\Db\ReadAdapter;
 use App\Handler\HomePageHandler;
 use Mezzio\Template\TemplateRendererInterface;
+use PhpDb\Adapter\AdapterInterface;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
@@ -30,6 +32,10 @@ final class HomePageHandlerFactory
             : null;
         assert($template instanceof TemplateRendererInterface || null === $template);
 
-        return new HomePageHandler($template);
+        return new HomePageHandler(
+            $container->get(AdapterInterface::class),
+            $container->get(ReadAdapter::class),
+            $template
+        );
     }
 }

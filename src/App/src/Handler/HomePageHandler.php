@@ -16,6 +16,7 @@ namespace App\Handler;
 
 use Laminas\Diactoros\Response;
 use Mezzio\Template\TemplateRendererInterface;
+use PhpDb\Adapter\AdapterInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
@@ -23,6 +24,8 @@ use Psr\Http\Server\RequestHandlerInterface;
 final class HomePageHandler implements RequestHandlerInterface
 {
     public function __construct(
+        private readonly AdapterInterface $dbAdapter,
+        private readonly AdapterInterface $readAdapter,
         private readonly ?TemplateRendererInterface $template = null,
     ) {}
 
