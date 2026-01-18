@@ -2,6 +2,18 @@
     "name": "webware/mezzio-bleeding-edge",
     "description": "A custom Mezzio skeleton",
     "license": "BSD-3-Clause",
+    "keywords": [
+        "mezzio",
+        "custom skeleton"
+    ],
+    "authors": [
+        {
+            "name": "Joey Smith",
+            "email": "jsmith@webinertia.net",
+            "homepage": "https://github.com/tyrsson/mezzio-bleeding-edge/discussions",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
         "laminas/laminas-component-installer": "^3.7",
