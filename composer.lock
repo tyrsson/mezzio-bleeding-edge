@@ -1414,12 +1414,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-db/phpdb.git",
-                "reference": "358211307cf82dbc107d6f2759276c737b741117"
+                "reference": "df0b1dddbee7432207d8c4bfa47ab88f0cd5e8cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-db/phpdb/zipball/358211307cf82dbc107d6f2759276c737b741117",
-                "reference": "358211307cf82dbc107d6f2759276c737b741117",
+                "url": "https://api.github.com/repos/php-db/phpdb/zipball/df0b1dddbee7432207d8c4bfa47ab88f0cd5e8cc",
+                "reference": "df0b1dddbee7432207d8c4bfa47ab88f0cd5e8cc",
                 "shasum": ""
             },
             "require": {
@@ -1475,7 +1475,7 @@
                 "issues": "https://github.com/php-db/phpdb/issues",
                 "source": "https://github.com/php-db/phpdb"
             },
-            "time": "2026-01-06T06:52:43+00:00"
+            "time": "2026-01-14T07:31:33+00:00"
         },
         {
             "name": "php-db/phpdb-adapter-pgsql",
@@ -1483,12 +1483,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-db/phpdb-adapter-pgsql.git",
-                "reference": "4e3bd748c25ac11952b626cc7b09be25b59bc0f1"
+                "reference": "7b191b95ab57a431000d9af4bb8513d7e077ba46"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-db/phpdb-adapter-pgsql/zipball/4e3bd748c25ac11952b626cc7b09be25b59bc0f1",
-                "reference": "4e3bd748c25ac11952b626cc7b09be25b59bc0f1",
+                "url": "https://api.github.com/repos/php-db/phpdb-adapter-pgsql/zipball/7b191b95ab57a431000d9af4bb8513d7e077ba46",
+                "reference": "7b191b95ab57a431000d9af4bb8513d7e077ba46",
                 "shasum": ""
             },
             "require": {
@@ -1536,7 +1536,7 @@
                 "issues": "https://github.com/php-db/phpdb-adapter-pgsql/issues",
                 "source": "https://github.com/php-db/phpdb-adapter-pgsql"
             },
-            "time": "2026-01-07T05:15:14+00:00"
+            "time": "2026-01-10T01:08:04+00:00"
         },
         {
             "name": "psr/container",
