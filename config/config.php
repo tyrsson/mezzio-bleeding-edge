@@ -14,6 +14,8 @@ $cacheConfig = [
 ];
 
 $aggregator = new ConfigAggregator([
+    PhpDb\ConfigProvider::class,
+    \PhpDb\Mysql\ConfigProvider::class,
     Laminas\View\ConfigProvider::class,
     Mezzio\LaminasView\ConfigProvider::class,
     Laminas\ServiceManager\ConfigProvider::class,
