@@ -48,6 +48,7 @@ require 'vendor/autoload.php';
     $factory = $container->get(MiddlewareFactory::class);
 
     if ($hasTracy) {
+        Debugger::$dumpTheme = $container->get('config')[Debugger::class]['dumpTheme'] ?? 'dark';
         Debugger::timer('build-pipeline');
     }
     // Execute programmatic/declarative middleware pipeline and routing
@@ -66,7 +67,7 @@ require 'vendor/autoload.php';
 
     if ($hasTracy) {
         $appRun = Debugger::timer('app-run');
-        Debugger::barDump(
+        Debugger::dump(
             [
                 'buildContainer' => $buildContainer,
                 'buildPipeline'  => $buildPipeline,
