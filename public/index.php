@@ -67,7 +67,7 @@ require 'vendor/autoload.php';
 
     if ($hasTracy) {
         $appRun = Debugger::timer('app-run');
-        Debugger::dump(
+        Debugger::barDump(
             [
                 'buildContainer' => $buildContainer,
                 'buildPipeline'  => $buildPipeline,
