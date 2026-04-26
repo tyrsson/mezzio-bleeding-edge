@@ -17,7 +17,7 @@ use Tracy\Debugger;
 return [
     Debugger::class => [
         'enable'       => Debugger::Development, // or Debugger::Production - disables tracy in production
-        'dumpTheme'    => 'dark',
+        'dumpTheme'    => 'light',
         'showLocation' => true,
         'keysToHide'   => [
             'password',

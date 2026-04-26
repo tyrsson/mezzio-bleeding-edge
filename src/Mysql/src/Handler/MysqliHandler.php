@@ -43,6 +43,8 @@ final class MysqliHandler implements RequestHandlerInterface
         $tableGateway = new TableGateway('test', $this->adapter);
         $metaData     = new Source($this->adapter);
         Debugger::barDump($tableGateway->select()->toArray(), 'MysqliHandler: Table Data');
+        Debugger::barDump($tableGateway->select()->toArray(), 'MysqliHandler: Table Data');
+        Debugger::barDump($metaData->getTableNames(), 'MysqliHandler: Tables');
         Debugger::barDump($metaData->getTableNames(), 'MysqliHandler: Tables');
 
         return new Response\HtmlResponse($this->template->render('mysql::mysqli-page', $data));
