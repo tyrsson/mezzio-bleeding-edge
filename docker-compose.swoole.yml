@@ -1,0 +1,13 @@
+services:
+  swoole:
+    build:
+      context: .
+      dockerfile: docker/swoole/Dockerfile
+      args:
+        PHP_VERSION: "8.3"
+    working_dir: /var/www
+    volumes:
+      - .:/var/www
+    ports:
+      - "8080:8080"
+    tty: true

@@ -25,7 +25,8 @@
         "mezzio/mezzio": "^3.26",
         "mezzio/mezzio-fastroute": "^3.14",
         "mezzio/mezzio-helpers": "^5.20",
-        "mezzio/mezzio-laminasviewrenderer": "^3.0"
+        "mezzio/mezzio-laminasviewrenderer": "^3.0",
+        "mezzio/mezzio-swoole": "^4.14"
     },
     "require-dev": {
         "phpstan/phpstan": "^2.1",
